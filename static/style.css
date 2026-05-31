@@ -1,0 +1,477 @@
+/* ########################################### */
+/*                 Global                      */
+/* ########################################### */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    font-size: 14px;
+    font-family: 'Titillium Web', sans-serif;
+    background-color: #000000;
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+}
+a {
+    color: #E0E0E0;
+    font-weight: bolder;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+
+h1 {
+    font-size: 16px;
+    font-weight: bolder;
+    color: #FFFFFF;
+}
+
+/* ########################################### */
+/*           Forums.html                       */
+/* ########################################### */
+.container {
+    margin: 20px;
+    padding: 20px;
+}
+
+.subforum {
+    margin-top: 20px;
+}
+
+.subforum-title {
+    background-color: #1A1A1A;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 4px;
+    border: 1px solid #333333;
+}
+
+.subforum-row {
+    display: grid;
+    grid-template-columns: 7% 60% 13% 20%;
+}
+
+.subforum-column {
+    padding: 10px;
+    margin: 4px;
+    border-radius: 5px;
+    background-color: #111111;
+    border: 1px solid #222222;
+}
+
+.subforum-description * {
+    margin-block: 0;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.subforum-icon i {
+    font-size: 45px;
+    color: #FFFFFF;
+}
+
+.subforum-devider {
+    display: none;   
+}
+
+/* For the smartphones */
+@media screen and (max-width: 460px) {
+    .container {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .subforum-row {
+        display: grid;
+        grid-template-columns: 25% 75%;
+        grid-template-rows: 65% 35%;
+    }
+
+    .subforum-devider {
+        display: block;
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0));
+    }
+}
+
+/* For the tablets */
+@media screen and (min-width: 460px) and (max-width: 1024px) {
+    .container {
+        margin: 15px;
+        padding: 15px;
+    }
+
+    .subforum-row {
+        display: grid;
+        grid-template-columns: 10% 60% 10% 20%;
+    }
+
+    .subforum-icon i {
+        font-size: 35px;
+    }
+
+    html {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 16px;
+    }
+}
+
+/*   Header Section    */
+header {
+    margin-inline: 10px;
+}
+
+/* Nav Bar styles */
+.navbar {
+    display: flex;
+    align-items: center;
+    padding-block: 10px;
+}
+
+.navigation {
+    background-color: #1a1a1a;
+    padding: 10px;
+    width: 65%;
+    display: inline-block;
+    border-radius: 5px;
+    max-height: 80px;
+    margin-right: 10px;
+    border: 1px solid #333333;
+}
+
+.close-icon i {
+    font-size: 60px;
+    float: left;
+    cursor: pointer;
+    color: #FFFFFF;
+}
+
+.nav-list {
+    list-style-type: none;
+    overflow: hidden;
+}
+
+.nav-item a {
+    float: right;
+    display: block;
+    text-align: center;
+    margin-inline: 20px;
+    font-size: 20px;
+    padding: 10px;
+    color: #FFFFFF;
+}
+
+.nav-item a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+.hide {
+    display: none;
+}
+
+.bar-icon {
+    font-size: 60px;
+    display: inline-block;
+    margin-right: 10px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+@font-face {
+    font-family: aquire;
+    src: url(aquire.otf);
+}
+
+.brand {
+    font-size: 60px;
+    display: inline-block;
+    font-family: aquire;
+    color: #FFFFFF;
+}
+
+/*Navbar for the smartphones*/
+@media screen and (max-width: 460px) {
+    .navigation {
+        max-height: auto;
+    }
+    
+    .close-icon i {
+        font-size: 30px;
+    }
+    
+    .nav-item a {
+        float: left;
+        display: inline;
+        margin-inline: 3px;
+        font-size: 10px;
+        padding: 5px;
+    }
+    
+    .bar-icon {
+        font-size: 30px;
+    }
+ 
+    .brand {
+        font-size: 20px;
+    }
+}
+
+/* Search Box styles */
+.search-box {
+    border: solid 1px #333333; /* Заменено с фиолетового */
+    margin-top: 20px;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    background-color: #111111;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.05);
+}
+
+.search-box select, .search-box input {
+    padding: 10px;
+    background-color: #222222; /* Темные инпуты */
+    color: #FFFFFF;
+    border: 1px solid #444444;
+}
+
+.search-box button {
+    padding: 10px;
+    background-color: #FFFFFF; /* Белая кнопка для контраста */
+    color: #000000;
+    border: 1px solid #FFFFFF;
+    cursor: pointer;
+}
+
+.search-box button:hover {
+    background-color: #000000;
+    color: #FFFFFF;
+    box-shadow: 0px 0px 5px #FFFFFF;
+}
+
+/* search box for smartphones */
+@media screen and (max-width: 460px) {
+    .search-box input, .search-box button, .search-box select {
+        min-width: 300px;
+        margin-top: 5px;
+    }    
+}
+
+/* forum info Styling */
+.forum-info {
+    padding: 20px;
+    background-color: #111111;
+    border-top: 1px solid #222222;
+    color: #CCCCCC;
+}
+
+.chart {
+    font-size: 20px;
+    font-weight: bold;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+}
+
+/* Footer Styling */
+footer {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #1A1A1A; /* Заменено с фиолетового на темно-серый */
+    display: block;
+    text-align: center;
+    border-top: 1px solid #333333;
+    color: #FFFFFF;
+}
+
+/* ########################################### */
+/*            posts.html                       */
+/* ########################################### */
+
+/* posts table's head  */
+.table-head {
+    display: flex;
+}
+
+.table-head div {
+    padding: 5px;
+    margin: 2px;
+    background-color: #222222; /* Скорректирован тон серого */
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+.table-head .status { flex: 5%; }
+.table-head .subjects { flex: 70%; }
+.table-head .replies { flex: 10%; }
+.table-head .last-reply { flex: 15%; }
+
+/* posts table's body  */
+.table-row {
+    display: flex;
+}
+
+.table-row .status, .table-row .subjects, .table-row .replies, .table-row .last-reply {
+    padding: 5px;
+    margin: 2px;
+    background-color: #111111;
+    border: 1px solid #222222;
+}
+
+.table-row .status {
+    flex: 5%;
+    font-size: 30px;
+    text-align: center;
+}
+
+.table-row .subjects { flex: 70%; }
+.table-row .replies { flex: 10%; }
+.table-row .last-reply { flex: 15%; }
+
+/* navigation path*/
+.navigate {
+    margin-block: 20px;
+    font-weight: lighter;
+    font-size: 24px;
+}
+
+.navigate a {
+    color: #FFFFFF;
+}
+
+.navigate a:hover {
+    color: #CCCCCC;
+    font-weight: bolder;
+}
+
+/* Pagination*/
+.pagination {
+    padding: 20px;
+    font-size: 15px;
+}
+
+.pagination a {
+    color: #FFFFFF;
+    margin-inline: 5px;
+    padding: 5px 10px;
+    border: solid 0.5px #FFFFFF;
+}
+
+.pagination a:hover {
+    background-color: #FFFFFF;
+    color: #000000;
+    opacity: 1;
+}
+
+.note {
+    background-color: #111111;
+    padding: 20px;
+    display: block;
+    border: 1px solid #222222;
+}
+
+.note span {
+    font-size: 20px;
+    margin-block: 5px;
+}
+
+/* ########################################### */
+/*            detail.html                      */
+/* ########################################### */
+.head {
+    display: flex;
+    background-color: #222222;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.authors { flex: 20%; }
+.content { flex: 80%; }
+
+.body {
+    display: flex;
+    background-color: #111111;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #222222;
+}
+
+.body .authors .username {
+    font-size: 20px;
+    color: #FFFFFF;
+}
+
+.body .authors img {
+    max-width: 50px;
+    max-height: 80px;
+    border: 1px solid #444444;
+}
+
+.body .content .comment button {
+    border: 1px solid #FFFFFF;
+    padding: 10px;
+    font-weight: bolder;
+    background-color: #FFFFFF;
+    color: #000000;
+    cursor: pointer;
+    float: right;
+}
+
+.body .content .comment button:hover {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+/* comment section */
+.comment-area {
+    margin-bottom: 50px;
+}
+
+.comment-area textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 10px;
+    margin-block: 10px;
+    background-color: #111111;
+    color: #FFFFFF;
+    border: 1px solid #444444;
+}
+
+.comment-area input {
+    float: right;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #FFFFFF;
+    color: #000000;
+    border: 1px solid #FFFFFF;
+    font-weight: bold;
+}
+
+.comment-area input:hover {
+    background-color: #000000;
+    color: #FFFFFF;
+    border: solid 1px #FFFFFF;
+}
+
+
+
+
+
+
+
+
+
