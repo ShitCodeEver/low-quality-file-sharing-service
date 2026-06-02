@@ -5,5 +5,5 @@ from .models import MediaPost
 
 class AdminMediaPost(admin.ModelAdmin):
     list_display = ['name', 'slug', 'media', 'extension']
-    exclude = ['name', 'slug', 'extensions']
+    exclude = ['name', 'slug', 'extension']
 # Register your models here.

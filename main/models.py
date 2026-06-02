@@ -17,7 +17,13 @@ class MediaPost(models.Model):
             self.extension = os.path.splitext(os.path.basename(self.media.name))[1] #возвращает расширение как я понял
             self.name = filename
             self.slug = slugify(self.name)
+        super().save(*args, **kwargs) #ыыы инициализируется только после создания объекта ыыы
+        
+        strId = str(self.id)
+        if not self.slug.endswith(strId):
+            self.slug = f"{self.slug}+{strId}"
         super().save(*args, **kwargs)
+        
         
     def __str__(self):
         return self.name
